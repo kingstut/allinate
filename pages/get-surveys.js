@@ -1,7 +1,7 @@
 import Layout from "../components/layout"
 import { handleResponse} from "../helpers/api"
 import { useSession, getSession } from "next-auth/react"
-
+import { server } from '../config'
 import GetFormList from "../components/GetFormList"
 import axios from "axios"
 
@@ -15,10 +15,10 @@ export default function GetSurveyPage({surveys}) {
     const cpr = survey.cpr
     const budget = 0
     const survey_id = survey.survey_id
-    await axios.put('http://localhost:3000/api/dashboard/', 
+    await axios.put(`${server}/api/dashboard/`, 
     { session, cpr, budget } ).then(handleResponse)
     
-    await axios.put('http://localhost:3000/api/surveys/', 
+    await axios.put(`${server}/api/surveys/`, 
     { email, survey_id, cpr } ).then(handleResponse)
     setShow(false)
   }

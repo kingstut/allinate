@@ -1,7 +1,7 @@
 import Layout from "../components/layout"
 import { useSession } from "next-auth/react"
 import SurveyForm from "../components/SurveyForm"
-
+import { server } from '../config'
 import { handleResponse} from "../helpers/api"
 import axios from "axios"
 
@@ -13,14 +13,14 @@ export default function CreateSurveyPage() {
     e.preventDefault();
 
     //data should be   {question:,  budget: , cpr: }
-    await axios.post('http://localhost:3000/api/surveys/', 
+    await axios.post(`${server}/api/surveys/`, 
     { session, data } ).then(handleResponse)
 
     //update user
     const budget = data.budget
     const cpr = 0
 
-    await axios.put('http://localhost:3000/api/dashboard/', 
+    await axios.put(`${server}/api/dashboard/`, 
     { session, cpr, budget } ).then(handleResponse)
 
   }
