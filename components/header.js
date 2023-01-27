@@ -2,6 +2,7 @@ import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "../styles/header.module.css"
 import { handleResponse} from "../helpers/api"
+import { server } from '../config'
 
 import axios from 'axios'
 
@@ -39,7 +40,7 @@ export default function Header() {
           )}
           {session?.user  
            && (
-            axios.post('http://localhost:3000/api/dashboard', 
+            axios.post(`${server}/api/dashboard`, 
             { session } ).then(handleResponse) ) && (
             <>
               {session.user.image && (
