@@ -1,0 +1,33 @@
+{
+  "name": "byos-v",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate:dev": "npx dotenv -e .env.local -- prisma migrate dev",
+    "db:push": "npx dotenv -e .env.local -- prisma db push",
+    "migrate:reset": "npx dotenv -e .env.local -- prisma migrate reset",
+    "db:seed": "npx dotenv -e .env.local -- prisma db seed",
+    "prisma:generate": "npx dotenv -e .env.local -- prisma generate",
+    "prisma:studio": "npx dotenv -e .env.local -- prisma studio",
+    "production:build": "npx prisma generate && npx prisma migrate deploy && next build"
+  },
+  "dependencies": {
+    "@next/font": "13.1.4",
+    "@prisma/client": "4.9.0",
+    "axios": "^1.2.3",
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.4",
+    "next": "13.1.4",
+    "next-auth": "^4.18.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.0.0",
+    "prisma": "^4.9.0"
+  }
+}

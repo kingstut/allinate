@@ -1,0 +1,45 @@
+.FormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+
+
+}
+.Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 10px orange solid;
+    flex-flow: column;
+    width: 500px;
+    background-color: purple;
+
+}
+
+.FormItem {
+    color: orange;
+    flex-basis: 2px;
+    height: 200px;
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 200px
+    
+}
+
+.FormButton {
+    height: 20px;
+    background-color: orange;
+    color: purple;
+    justify-content: space-around;
+
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+}

@@ -1,0 +1,35 @@
+.BoxContainer{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 5px;
+
+}
+
+
+.Box1{
+  display: flex;
+  flex: 1;
+  height: 500px;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  border: 10px purple solid;
+  background-color: orange;
+  color: purple;
+  list-style-type: none;
+  
+}
+
+.Box2{
+  display: flex;
+  flex: 1;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  border: 10px orange solid;
+  background-color: purple;
+  color: orange;
+  list-style-type: none;
+  
+}
