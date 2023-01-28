@@ -7,6 +7,9 @@ function handler(req, res) {
             return postUser();
         case 'PUT':
             return updateUser();
+          // This will allow OPTIONS request
+        case 'OPTIONS': 
+            return res.status(200).send("ok")
         default:
             return res.status(405).end(`Method ${req.method} Not Allowed`)
     }

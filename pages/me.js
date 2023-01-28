@@ -24,7 +24,7 @@ export async function getServerSideProps(context) {
         where: {
           user_id: em,
         },
-      })
+      }).then(handleResponse)
     //const res = await fetch(`http://localhost:3000/api/surveys/${em}`).then(handleResponse)
     //const surveys = await res.json()
   
