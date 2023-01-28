@@ -4,7 +4,7 @@ import { useSession, getSession } from "next-auth/react"
 import { server } from '../config'
 import GetFormList from "../components/GetFormList"
 import axios from "axios"
-
+import { prisma } from '../server/db/client'
 
 export default function GetSurveyPage({surveys}) {
   const { data: session } = useSession()

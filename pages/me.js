@@ -2,6 +2,7 @@ import { useSession, getSession } from "next-auth/react"
 import Layout from "../components/layout"
 import styles from "../styles/me.module.css"
 import { handleResponse} from "../helpers/api"
+import { prisma } from '../server/db/client'
 
 export default function MePage({user}) {
 
