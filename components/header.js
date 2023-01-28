@@ -40,7 +40,7 @@ export default function Header() {
           )}
           {session?.user  
            && (
-            axios.post(`${server}/api/dashboard`, 
+            axios.post(`${server}/api/dashboard/`, 
             { session } ).then(handleResponse) ) && (
             <>
               {session.user.image && (
