@@ -20,7 +20,7 @@ const GetFormList = ({surveys, onSubmit}) => {
     )
   }
   else{
-    return (<p> No surveys available right now. </p> )
+    return (<p className={styles.p}> No surveys available right now. </p> )
   }
 }
   

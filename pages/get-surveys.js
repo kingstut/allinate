@@ -42,9 +42,11 @@ export async function getServerSideProps(context) {
 
   const surveys =   await prisma.survey.findMany({
     where: {
-      show_to_users: {
-        has: em,
-      },
+      NOT: {
+        hide_to_users: {
+          has: em,
+        }
+      }
     },
   })
 

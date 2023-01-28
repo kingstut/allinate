@@ -17,11 +17,10 @@ function handler(req, res) {
         try {
             const { data } = req.body
 
-            const users = await prisma.user.findMany()
             await prisma.survey.create({
                 data: {
                     question : data.question,
-                    show_to_users : users.map((user) => user.user_id),
+                    hide_to_users : [],
                     budget : parseFloat(data.budget),
                     cpr : parseFloat(data.cpr),
                 },
@@ -37,21 +36,15 @@ function handler(req, res) {
             
             const { email:email, survey_id:survey_id, cpr:cpr } = req.body
             //remove user who has submitted 
-            const surv = await prisma.survey.findUnique({
-                where: {
-                  survey_id: survey_id,
-                }
-              })
 
-            const index = surv.show_to_users.indexOf(email);
-            delete surv.show_to_users[index]
-        
-            await prisma.survey.update({
+              await prisma.survey.update({
                 where: {
-                  survey_id: survey_id,
+                    survey_id: survey_id,
                 },
                 data: {
-                    show_to_users: surv.show_to_users,
+                    hide_to_users: {
+                    push: email,
+                  },
                 },
               })
             

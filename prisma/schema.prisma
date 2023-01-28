@@ -13,7 +13,7 @@ datasource db {
 model Survey {
     survey_id Int @id @default(autoincrement())
     question String 
-    show_to_users String[]
+    hide_to_users String[]
     budget Float
     cpr Float
 }
