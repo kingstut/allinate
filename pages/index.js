@@ -7,7 +7,7 @@ export default function IndexPage() {
       <div className={styles.BoxContainer}>
         <div className={styles.Box1}>
           <div>
-          <Image className={styles.img1} src="/../public/Asker.png" width={180}
+          <Image className={styles.img1} src={"/static/img/Asker.png"} width={180}
             height={240} alt="" /> 
           </div>
           <h2> <li>Gather data from the world </li>
@@ -19,7 +19,7 @@ export default function IndexPage() {
         <h2> <li>Tell what you know </li>
           <li> You are the product, get paid for it  </li></h2>
         <div>
-          <Image className={styles.img2} src="/../public/Answerer.jpeg" width={180}
+          <Image className={styles.img2} src={"/static/img/Answerer.jpeg"} width={180}
             height={240} alt="" /> 
         </div>
         </div>
