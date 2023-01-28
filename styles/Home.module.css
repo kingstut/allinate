@@ -18,12 +18,14 @@
   background-color: orange;
   color: purple;
   list-style-type: none;
+  flex-direction: column;
   
 }
 
 .Box2{
   display: flex;
   flex: 1;
+  height: 500px;
   padding: 100px;
   justify-content: center;
   align-items: center;
@@ -31,5 +33,18 @@
   background-color: purple;
   color: orange;
   list-style-type: none;
+  flex-direction: column;
   
+}
+
+.img1 {
+  border: 5px solid white;
+  border-radius: 10%;
+  margin: 20px;
+}
+
+.img2 {
+  border: 5px solid black;
+  border-radius: 10%;
+  margin: 20px;
 }
